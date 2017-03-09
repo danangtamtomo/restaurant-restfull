@@ -1,15 +1,23 @@
+require('dotenv').config()
 var express = require('express');
 var path = require('path');
 // var favicon = require('serve-favicon');
 var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 // var bodyParser = require('body-parser');
+var mongoDbConnection = require('./config/mongo')
 
 var index = require('./routes/index');
 var restaurants = require('./routes/restaurants');
 var foods = require('./routes/foods');
 
 var app = express();
+
+
+mongoDbConnection.on('error', console.error.bind(console, 'connection error:'))
+mongoDbConnection.once('open', function () {
+  console.log('Mongodb is connected with database: '+process.env.MONGO_DATABASE)
+})
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
