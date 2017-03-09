@@ -1,5 +1,5 @@
 Steps of starting the app:  
-1. npm install
+1. npm install  
 2. npm start
 
 These are end point of the restaurant resfull , you can access data with these following representations:  
