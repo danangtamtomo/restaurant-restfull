@@ -11,7 +11,7 @@ RestaurantController.getRestaurants = function (req, res, next) {
 
 RestaurantController.getRestaurant = function (req, res, next) {
   Restaurant.find({
-    _id: req.body.id
+    _id: req.params.id
   })
     .then(function (restaurant) {
       res.send(restaurant)
@@ -20,7 +20,7 @@ RestaurantController.getRestaurant = function (req, res, next) {
 
 RestaurantController.createRestaurant = function (req, res, next) {
   var restaurant = new Restaurant(req.body)
-  reataurant.save()
+  restaurant.save()
     .then(function (food) {
       res.send({
         status: 'Ok',

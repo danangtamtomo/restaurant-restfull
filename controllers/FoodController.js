@@ -11,7 +11,7 @@ FoodController.getFoods = function (req, res, next) {
 
 FoodController.getFood = function (req, res, next) {
   Customer.find({
-    _id: req.body.id
+    _id: req.params.id
   })
     .then(function (food) {
       res.send(food)
