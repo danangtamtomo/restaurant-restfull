@@ -3,9 +3,9 @@ var router = express.Router()
 const FoodController = require('../controllers/FoodController')
 
 router.get('/', FoodController.getFoods)
-router.get('/', FoodController.getFood)
+router.get('/:id', FoodController.getFood)
 router.post('/', FoodController.createFood)
-router.put('/', FoodController.updateFood)
-router.delete('/', FoodController.deleteFood)
+router.put('/:id', FoodController.updateFood)
+router.delete('/:id', FoodController.deleteFood)
 
 module.exports = router
