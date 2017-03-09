@@ -2,7 +2,7 @@ const Restaurant = require('../models/Restaurant')
 
 var RestaurantController = {}
 
-RestaurantController.getRestaurant = function (req, res, next) {
+RestaurantController.getRestaurants = function (req, res, next) {
   Restaurant.find({})
     .then(function (restaurants) {
       res.send(restaurants)
