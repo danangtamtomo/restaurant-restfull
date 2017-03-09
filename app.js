@@ -5,7 +5,7 @@ var path = require('path');
 var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 // var bodyParser = require('body-parser');
-var mongoDbConnection = require('./config/mongo')
+var mongoDbConnection = require('./configs/database/mongodb')
 
 var index = require('./routes/index');
 var restaurants = require('./routes/restaurants');
@@ -16,7 +16,7 @@ var app = express();
 
 mongoDbConnection.on('error', console.error.bind(console, 'connection error:'))
 mongoDbConnection.once('open', function () {
-  console.log('Mongodb is connected with database: '+process.env.MONGO_DATABASE)
+  console.log('Mongodb is connected with database name: '+process.env.MONGO_DATABASE)
 })
 
 // view engine setup
