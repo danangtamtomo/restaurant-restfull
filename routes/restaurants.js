@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-const RestaurantController = require('../controllers/'RestaurantController)
+const RestaurantController = require('../controllers/RestaurantController')
 
 router.get('/', RestaurantController.getRestaurants)
 router.get('/', RestaurantController.getRestaurant)
