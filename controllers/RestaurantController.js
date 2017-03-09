@@ -21,7 +21,7 @@ RestaurantController.getRestaurant = function (req, res, next) {
 RestaurantController.createRestaurant = function (req, res, next) {
   var restaurant = new Restaurant(req.body)
   restaurant.save()
-    .then(function (food) {
+    .then(function (restaurant) {
       res.send({
         status: 'Ok',
         message: 'New restaurant has been created',
@@ -41,7 +41,7 @@ RestaurantController.updateRestaurant = function (req, res, next) {
   }, {
     $set: req.body
   })
-    .then(function (err, food) {
+    .then(function (err, restaurant) {
       res.send({
         status: 'Ok',
         message: `The restaurant has been updated`,

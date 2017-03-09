@@ -10,7 +10,7 @@ FoodController.getFoods = function (req, res, next) {
 }
 
 FoodController.getFood = function (req, res, next) {
-  Customer.find({
+  Food.find({
     _id: req.params.id
   })
     .then(function (food) {
